@@ -1,52 +1,150 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
+/* Hero Section Styles */
 .hero {
-    background: linear-gradient(135deg, #0dcaf0, #ff6200);
+    background: linear-gradient(135deg, #0dcaf0, #ff6200); /* Teal to orange gradient */
     padding: 100px 0;
     color: white;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/fall-bg-overlay.jpg') no-repeat center/cover; /* Fall overlay for seasonal effect */
+    opacity: 0.2; /* Subtle fall texture */
+    z-index: 0;
+}
+.hero > .container {
+    position: relative;
+    z-index: 1;
+}
+.hero img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 4px solid #fff;
 }
 
-.card {
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1a1a1a; /* Darker navbar for contrast */
+}
+.navbar-brand img {
     transition: transform 0.3s;
 }
-
-.card:hover {
-    transform: translateY(-5px);
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+.navbar-nav .nav-link {
+    color: #fff !important;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #0dcaf0 !important;
 }
 
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.btn-primary {
-    background-color: #ff6200;
-    border-color: #ff6200;
-}
-
-.btn-primary:hover {
-    background-color: #e65a00;
-    border-color: #e65a00;
-}
-
-/* Animations */
-.animate__animated {
-    animation-duration: 1s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+/* Card Styles */
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    background-color: #fff;
 }
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Button Styles */
+.btn-primary {
+    background-color: #ff6200;
+    border-color: #ff6200;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #e65a00;
+    border-color: #e65a00;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+/* Carousel Styles */
 .carousel-caption {
     color: #fff !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+.carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Animation Styles */
+.animate__animated {
+    animation-duration: 1s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .row > [class^="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Fall Seasonal Touches */
+.section-fall {
+    background-color: #f5e8c7; /* Light fall beige */
+    padding: 20px 0;
+}
+.text-primary {
+    color: #0dcaf0 !important;
+}
+.text-secondary {
+    color: #ff6200 !important;
+}
+
+/* Custom Adjustments */
+.container {
+    max-width: 1140px;
+}
+h2, h3 {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+p {
+    line-height: 1.6;
 }
