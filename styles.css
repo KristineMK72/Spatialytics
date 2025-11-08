@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0dcaf0, #ff6200);
+    padding: 100px 0;
+    color: white;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #ff6200;
+    border-color: #ff6200;
+}
+
+.btn-primary:hover {
+    background-color: #e65a00;
+    border-color: #e65a00;
+}
+
+/* Animations */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
