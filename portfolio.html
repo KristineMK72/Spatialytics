@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Spatialytics Solutions</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Spatialytics Solutions Logo" height="40"></a>
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Spatialytics Solutions Logo" height="40">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -30,124 +35,204 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero text-center text-white py-5" style="background-image: url('images/fall-portfolio-bg.jpg'); background-size: cover; background-position: center;">
-    <div class="container" style="background: rgba(0, 0, 0, 0.5); padding: 40px 20px;">
-      <h1 class="display-5 animate__animated animate__fadeIn">Our Portfolio</h1>
-      <p class="lead animate__animated animate__fadeIn animate__delay-1s">Showcasing Geospatial, Web, and Data Innovations</p>
+    <div class="container" style="background: rgba(0,0,0,0.55); padding: 40px 20px;">
+      <h1 class="display-5">Portfolio</h1>
+      <p class="lead">Geospatial Intelligence • Web Development • Data Automation • Brand Ecosystems</p>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- Featured Projects -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Current Projects</h2>
+      <h2 class="text-center mb-4">Featured Projects</h2>
 
-      <!-- Project Carousel -->
-      <div id="projectCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="images/native-nations-screenshot.jpg" class="d-block w-100" alt="Native Nations History Map" style="max-height: 400px; object-fit: cover;">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
-              <h5>Native Nations History Map</h5>
-              <p>Interactive visualization of Native lands and historical boundaries.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/missions-mental-health-screenshot.jpg" class="d-block w-100" alt="Missions and Mental Health" style="max-height: 400px; object-fit: cover;">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
-              <h5>Missions & Mental Health</h5>
-              <p>Storymap exploring missionary life and wellbeing.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/august-winter-screenshot.jpg" class="d-block w-100" alt="August E. Winter" style="max-height: 400px; object-fit: cover;">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75">
-              <h5>August E. Winter</h5>
-              <p>Historic mission journeys visualized through geospatial storytelling.</p>
+      <div class="row">
+
+        <!-- Grit & Grace Store -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/gritandgrace-store.jpg" class="card-img-top" alt="Grit & Grace Store">
+            <div class="card-body">
+              <h5 class="card-title">Grit & Grace Store</h5>
+              <p class="card-text">Faith-driven apparel and patriotic designs built on a custom e‑commerce platform.</p>
+              <a href="https://gritandgrace.buzz" class="btn btn-primary mt-2" target="_blank">Visit Store</a>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+
+        <!-- SD Rainfall Explorer -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/sd-rainfall.jpg" class="card-img-top" alt="SD Rainfall Explorer">
+            <div class="card-body">
+              <h5 class="card-title">South Dakota Rainfall Explorer</h5>
+              <p class="card-text">Interactive rainfall dashboard with county-level trends, charts, and climate insights.</p>
+              <a href="https://sd-rainfall-viz.vercel.app" class="btn btn-primary mt-2" target="_blank">View Live</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Resilient Voice -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="images/resilient-voice.jpg" class="card-img-top" alt="The Resilient Voice">
+            <div class="card-body">
+              <h5 class="card-title">The Resilient Voice</h5>
+              <p class="card-text">A mission-driven platform amplifying stories of faith, freedom, and resilience.</p>
+              <a href="https://theresilientvoice.com" class="btn btn-primary mt-2" target="_blank">Visit Site</a>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <!-- Map -->
-      <div id="map" style="height: 400px;" class="mb-4"></div>
+  <!-- Community Tools -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Community & Fundraising Tools</h2>
 
-      <!-- Project Cards -->
       <div class="row">
-        <!-- Native Nations History Map -->
+
+        <!-- Generic Fundraiser -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">Medical Fundraiser Template</h5>
+              <p class="card-text">A customizable, anonymous GoFundMe-style fundraiser page.</p>
+              <a href="https://kristinemk72.github.io/Fundraiser/" class="btn btn-primary mt-2" target="_blank">View Template</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generic Campaign Fundraiser -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">Campaign Fundraiser Template</h5>
+              <p class="card-text">A neutral, non-candidate campaign-style donation page.</p>
+              <a href="https://kristinemk72.github.io/PoliticalFundraiser/" class="btn btn-primary mt-2" target="_blank">View Template</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Ecosystem -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Brand Ecosystem</h2>
+
+      <div class="row">
+
+        <!-- Spatialytics -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">Spatialytics Solutions</h5>
+              <p class="card-text">Geospatial intelligence, dashboards, automation, and custom web tools.</p>
+              <a href="index.html" class="btn btn-primary mt-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kahler WIndustries (placeholder name) -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">Kahler WIndustries</h5>
+              <p class="card-text">Innovation lab for engineering concepts, prototypes, and R&D.</p>
+              <a href="#" class="btn btn-secondary mt-2 disabled">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grit & Grace -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">Grit & Grace</h5>
+              <p class="card-text">Apparel, mission-driven storytelling, and community impact.</p>
+              <a href="https://gritandgrace.buzz" class="btn btn-primary mt-2" target="_blank">Visit Brand</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Legacy GIS Projects -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Legacy GIS Projects</h2>
+
+      <div class="row">
+
+        <!-- Native Nations -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">Native Nations History Map</h5>
               <p class="card-text">Interactive map highlighting Native Nations, lands, and cultures.</p>
               <a href="https://kristinemk72.github.io/Native-Nations-History-Map/" class="btn btn-primary mt-2" target="_blank">View Live</a>
-              <a href="https://github.com/kristinemk72/Native-Nations-History-Map" class="btn btn-secondary mt-2" target="_blank">View Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Missions and Mental Health -->
+        <!-- Missions & Mental Health -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">Missions & Mental Health</h5>
               <p class="card-text">Story map connecting missionary journeys and mental resilience.</p>
               <a href="https://kristinemk72.github.io/missions-and-mental-health/" class="btn btn-primary mt-2" target="_blank">View Live</a>
-              <a href="https://github.com/kristinemk72/missions-and-mental-health" class="btn btn-secondary mt-2" target="_blank">View Code</a>
             </div>
           </div>
         </div>
 
-        <!-- August E. Winter -->
+        <!-- August Winter -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">August E. Winter</h5>
-              <p class="card-text">A historic map exploring missionary work across 1861–1865.</p>
+              <p class="card-text">Historic missionary journeys visualized through geospatial storytelling.</p>
               <a href="https://kristinemk72.github.io/August-E-Winter/" class="btn btn-primary mt-2" target="_blank">View Live</a>
-              <a href="https://github.com/kristinemk72/August-E-Winter" class="btn btn-secondary mt-2" target="_blank">View Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Wind Turbine Work -->
+        <!-- Wind Turbine -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">Wind Turbine Work</h5>
               <p class="card-text">Site documenting renewable energy planning and operations.</p>
               <a href="https://kristinemk72.github.io/WindTurbineWork/" class="btn btn-primary mt-2" target="_blank">View Live</a>
-              <a href="https://github.com/kristinemk72/WindTurbineWork" class="btn btn-secondary mt-2" target="_blank">View Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Halloween History -->
+        <!-- Halloween -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">Halloween History</h5>
               <p class="card-text">Interactive story map exploring cultural roots of Halloween.</p>
               <a href="https://kristinemk72.github.io/Halloween-History/" class="btn btn-primary mt-2" target="_blank">View Live</a>
-              <a href="https://github.com/kristinemk72/Halloween-History" class="btn btn-secondary mt-2" target="_blank">View Code</a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="map.js"></script>
 </body>
 </html>
