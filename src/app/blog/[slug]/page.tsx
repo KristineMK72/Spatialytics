@@ -9,22 +9,29 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  // If your getBlogSlugs() returns ["post.mdx", ...], keep the replace.
-  // If it already returns ["post", ...], you can remove the replace.
   return getBlogSlugs().map((f) => ({ slug: f.replace(/\.mdx$/, "") }));
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return { title: "Post not found" };
+  }
+
+  const { data } = post;
+
+  return {
+    title: String(data.title ?? slug),
+    description: data.excerpt ? String(data.excerpt) : undefined,
+  };
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
 
-  let post: ReturnType<typeof getPostBySlug> | null = null;
-
-  try {
-    post = getPostBySlug(slug);
-  } catch {
-    post = null;
-  }
-
+  const post = getPostBySlug(slug);
   if (!post) return notFound();
 
   const { data, content } = post;
@@ -33,9 +40,13 @@ export default async function BlogPostPage({ params }: PageProps) {
     <main>
       <Container className="pt-10">
         <Card className="p-8 md:p-12">
-          <div className="kicker">{String(data.date ?? "")}</div>
+          {!!data.date && <div className="kicker">{String(data.date)}</div>}
+
           <h1 className="h1 mt-3">{String(data.title ?? slug)}</h1>
-          <p className="p mt-4">{String(data.excerpt ?? "")}</p>
+
+          {!!data.excerpt && (
+            <p className="p mt-4">{String(data.excerpt)}</p>
+          )}
 
           <div className="prose prose-invert max-w-none mt-10">
             <MDXRemote source={content} />
