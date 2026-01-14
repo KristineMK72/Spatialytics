@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg0: 10 10 18;
+  --bg1: 16 16 30;
+  --card: 255 255 255;
+  --muted: 255 255 255;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: rgb(255 255 255 / 0.92);
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(124, 58, 237, 0.30), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(56, 189, 248, 0.20), transparent 60%),
+    radial-gradient(900px 600px at 50% 90%, rgba(236, 72, 153, 0.18), transparent 60%),
+    linear-gradient(180deg, rgb(var(--bg0)), rgb(var(--bg1)));
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/7 border border-white/10 backdrop-blur-xl shadow-[0_20px_80px_-20px_rgba(0,0,0,0.6)];
+  }
+  .kicker {
+    @apply uppercase tracking-[0.22em] text-xs text-white/60 font-semibold;
+  }
+  .h1 {
+    @apply text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight;
+  }
+  .h2 {
+    @apply text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  .p {
+    @apply text-white/75 leading-relaxed;
+  }
+  .link {
+    @apply text-white/85 hover:text-white underline underline-offset-4 decoration-white/25 hover:decoration-white/60 transition;
+  }
+}
