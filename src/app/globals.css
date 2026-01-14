@@ -1,44 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --bg0: 10 10 18;
-  --bg1: 16 16 30;
-  --card: 255 255 255;
-  --muted: 255 255 255;
+/* --- Topo / blueprint hero background (Spatialytics style) --- */
+.topo-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
 }
 
-html, body {
-  height: 100%;
-}
-
-body {
-  color: rgb(255 255 255 / 0.92);
+.topo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(1200px 600px at 20% 10%, rgba(124, 58, 237, 0.30), transparent 60%),
-    radial-gradient(900px 500px at 80% 20%, rgba(56, 189, 248, 0.20), transparent 60%),
-    radial-gradient(900px 600px at 50% 90%, rgba(236, 72, 153, 0.18), transparent 60%),
-    linear-gradient(180deg, rgb(var(--bg0)), rgb(var(--bg1)));
+    /* subtle topo rings */
+    repeating-radial-gradient(
+      circle at 25% 35%,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 1px,
+      transparent 14px,
+      transparent 22px
+    ),
+    /* blueprint grid */
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 44px 44px,
+    /* deep gradient wash */
+    radial-gradient(1200px 600px at 30% 20%, rgba(99,102,241,0.35), transparent 60%),
+    radial-gradient(900px 500px at 70% 30%, rgba(56,189,248,0.22), transparent 60%),
+    linear-gradient(180deg, rgba(6, 20, 40, 0.92), rgba(2, 8, 16, 0.92));
+  opacity: 0.9;
+  z-index: 0;
 }
 
-@layer components {
-  .glass {
-    @apply bg-white/7 border border-white/10 backdrop-blur-xl shadow-[0_20px_80px_-20px_rgba(0,0,0,0.6)];
-  }
-  .kicker {
-    @apply uppercase tracking-[0.22em] text-xs text-white/60 font-semibold;
-  }
-  .h1 {
-    @apply text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight;
-  }
-  .h2 {
-    @apply text-2xl md:text-3xl font-bold tracking-tight;
-  }
-  .p {
-    @apply text-white/75 leading-relaxed;
-  }
-  .link {
-    @apply text-white/85 hover:text-white underline underline-offset-4 decoration-white/25 hover:decoration-white/60 transition;
-  }
+.topo-hero::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.10), transparent 55%);
+  filter: blur(30px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.topo-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero title blocks like your screenshot */
+.hero-chip {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+}
+
+.hero-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.30);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+}
+
+/* Button gradient like "Contact Kris" */
+.btn-gradient {
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  color: rgba(0,0,0,0.85);
+  font-weight: 800;
+}
+.btn-gradient:hover {
+  filter: brightness(1.05);
 }
